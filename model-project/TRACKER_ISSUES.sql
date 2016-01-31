@@ -1,46 +1,46 @@
 ﻿-- Create table issues--
 
-create table issues(id_issues int not null primary key,
-issue_name VARCHAR(45) NULL,
+create table issues(id int not null primary key,
+name VARCHAR(45) NULL,
 description VARCHAR(254) NULL,
-date VARCHAR(45) NULL,
-author VARCHAR(45) NULL);
+createDate date not NULL,
+authorId int NULL references users(id));
 
 -- add information to issues--
 
 insert into issues values(1, 'First Issue',
  'This is an issue about my first expierience',
- '25-01-16',
- 'Maxim');
+ CURRENT_DATE);
 
 -- Create table comments--
 
-create table comments(id_comment INT NOT NULL PRIMARY KEY,
-author VARCHAR(45) NULL,
-date VARCHAR(45) NOT NULL,
-comments VARCHAR(254) NULL);
+create table comments(id INT NOT NULL PRIMARY KEY,
+text VARCHAR(245) NULL,
+createDate date NOT NULL,
+authorId int NULL references users(id));
 
 -- add information to comments--
 
-insert into comments values(1, 'John Smith', '26-01-16',
-'Some information about comment');
+insert into comments values(1, 'My opinion about PostgresSQL is changing...', CURRENT_DATE);
 
 -- Create table users--
 
-create table users(id_user int not null primary key,
-admins varchar(45) null,
-users varchar(45) null);
+create table users(id int not null primary key,
+login varchar(45) null,
+password varchar(45) null,
+roleId int null references roles(id));
 
 -- add information to users--
 
-insert into users values(1, null, 'John Smith');
-insert into users values(2, 'Maxim', null);
+insert into users values(1, 'admin', 'adminsPassword');
+insert into users values(2, 'user', 'usersPassword');
 
 -- Create table Files --
 
-create table files(id_file int not null primary key,
-file varchar(45) null);
+create table roles(id int not null primary key,
+name varchar(45) not null);
 
 -- add information to files--
 
-insert into files values (1, 'a file');
+insert into roles values (1, 'admin');
+insert into roles values (2, 'user');
