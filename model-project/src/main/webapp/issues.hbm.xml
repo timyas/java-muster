@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3
+<hibernate-mapping>
+    <class name="Issues" table="issues">
+        <id name="id" column="id" type="int">
+            <generator class="assigned"/>
+        </id>
+        <property name="name" column="name" type="string"/>
+        <property name="description" column="description" type="string"/>
+        <property name="createDate" column="createdate" type="date"/>
+        <property name="login" column="login" type="string"/>
+        <one-to-one name="authorId" class="Users" 
+    </class>
+</hibernate-mapping>

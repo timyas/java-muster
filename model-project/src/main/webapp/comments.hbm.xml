@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3
+<hibernate-mapping>
+    <class name="Comments" table="comments">
+        <id name="id" column="id" type="int">
+            <generator class="assigned"/>
+        </id>
+        <property name="text" column="text" type="string"/>
+        <property name="createDate" column="createdate" type="date"/>
+        
+    </class>
+</hibernate-mapping>
