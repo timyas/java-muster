@@ -1,10 +1,8 @@
-package main;
-
 public class Issues {
 	private int id;
 	private String name;
 	private String description;
-	private String date;
+	private String createDate;
 	private String authorId;
 	
 	public Issues(){}
@@ -29,12 +27,12 @@ public class Issues {
 		return description;
 	}
 	
-	public void setDate(String date){
-		this.date = date;
+	public void setCreateDate(String createDate){
+		this.createDate = createDate;
 	}
 	
-	public String getDate(){
-		return date;
+	public String getCreateDate(){
+		return createDate;
 	}
 	
 	public void setAuthorId(int authorId){

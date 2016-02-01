@@ -1,5 +1,3 @@
-package main;
-
 public class Users {
 	private int id;
 	private String login;

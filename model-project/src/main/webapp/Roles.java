@@ -1,5 +1,3 @@
-package main;
-
 public class Roles {
 	private int id;
 	
