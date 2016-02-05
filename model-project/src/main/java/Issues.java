@@ -1,9 +1,10 @@
-public class Issues {
+public class Issue {
 	private int id;
 	private String name;
 	private String description;
 	private String createDate;
-	private String authorId;
+	private String userAuthor;
+	private <List> comments;
 	
 	public Issues(){}
 	
@@ -44,6 +45,6 @@ public class Issues {
 	}
 	
 	public String toString(){
-		return id+" "+name;
+		return id+" "+name; //String formatter equals() + hashCode();
 	}
 }
