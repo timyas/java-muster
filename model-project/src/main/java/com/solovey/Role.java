@@ -1,11 +1,12 @@
-public class Roles {
+package com.solovey;
+public class Role {
 	private int id;
 	
 	private String name;
 	
-	public Roles(){}
+	public Role(){}
 	
-	public Roles(int id, String name){
+	public Role(int id, String name){
 		this.id = id;
 		this.name = name;
 	}

@@ -1,10 +1,12 @@
-public class Comments {
+package com.solovey;
+
+public class Comment {
 	private int id;
 	private String text;
 	private String createDate;
 	private int authorId;
 	
-	public Comments(){}
+	public Comment(){}
 	
 	public void setId(int id){
 		this.id = id;

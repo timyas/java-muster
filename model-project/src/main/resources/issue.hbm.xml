@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3">
 <hibernate-mapping>
-    <class name="Issues" table="issues">
+    <class name="com.solovey.Issue" table="issues">
         <id name="id" column="id" type="int">
             <generator class="increment"/>
         </id>

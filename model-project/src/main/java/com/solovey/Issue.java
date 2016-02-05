@@ -1,12 +1,16 @@
+package com.solovey;
+
+import java.util.List;
+
 public class Issue {
 	private int id;
 	private String name;
 	private String description;
 	private String createDate;
 	private String userAuthor;
-	private <List> comments;
+	private List <String> comments;
 	
-	public Issues(){}
+	Issue(){}
 	
 	public void setId(int id){
 		this.id = id;
@@ -37,11 +41,11 @@ public class Issue {
 	}
 	
 	public void setAuthorId(int authorId){
-		this.authorId = authorId;
+		this.id = authorId;
 	}
 	
 	public int getAuthorId(){
-		return authorId;
+		return id;
 	}
 	
 	public String toString(){

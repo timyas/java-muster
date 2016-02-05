@@ -1,10 +1,11 @@
-public class Users {
+package com.solovey;
+public class User {
 	private int id;
 	private String login;
 	private String password;
 	private int roleId;
 	
-	public Users(){}
+	public User(){}
 	
 	public void setId(int id){
 		this.id = id;
