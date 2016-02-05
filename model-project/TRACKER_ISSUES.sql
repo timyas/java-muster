@@ -1,33 +1,18 @@
-﻿-- Create table issues--
+﻿-- Create table Roles --
 
-create table issues(id int not null primary key,
-name VARCHAR(45) NULL,
-description VARCHAR(254) NULL,
-createDate date not NULL,
-authorId int NULL references users(id));
+create table roles(id int not null primary key,
+name varchar(245) not null);
 
--- add information to issues--
+-- add information to roles--
 
-insert into issues values(1, 'First Issue',
- 'This is an issue about my first expierience',
- CURRENT_DATE);
-
--- Create table comments--
-
-create table comments(id INT NOT NULL PRIMARY KEY,
-text VARCHAR(245) NULL,
-createDate date NOT NULL,
-authorId int NULL references users(id));
-
--- add information to comments--
-
-insert into comments values(1, 'My opinion about PostgresSQL is changing...', CURRENT_DATE);
+insert into roles values (1, 'admin');
+insert into roles values (2, 'user');
 
 -- Create table users--
 
 create table users(id int not null primary key,
-login varchar(45) null,
-password varchar(45) null,
+login varchar(245) null,
+password varchar(245) null,
 roleId int null references roles(id));
 
 -- add information to users--
@@ -35,12 +20,27 @@ roleId int null references roles(id));
 insert into users values(1, 'admin', 'adminsPassword');
 insert into users values(2, 'user', 'usersPassword');
 
--- Create table Files --
+-- Create table comments--
 
-create table roles(id int not null primary key,
-name varchar(45) not null);
+create table comments(id INT NOT NULL PRIMARY KEY,
+text TEXT NULL,
+createDate timestamp NOT NULL,
+authorId int NULL references users(id));
 
--- add information to files--
+-- add information to comments--
 
-insert into roles values (1, 'admin');
-insert into roles values (2, 'user');
+insert into comments values(1, 'My opinion about PostgresSQL is changing...', now());
+
+-- Create table issues--
+
+create table issues(id int not null primary key,
+name VARCHAR(245) NULL,
+description text NULL,
+createDate timestamp not NULL,
+authorId int NULL references users(id));
+
+-- add information to issues--
+
+insert into issues values(1, 'First Issue',
+ 'This is an issue about my first expierience',
+ now());
