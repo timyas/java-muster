@@ -1,4 +1,5 @@
 package com.solovey;
+
 public class Role {
 	private int id;
 	
@@ -26,8 +27,22 @@ public class Role {
 	public String getName(){
 		return name;
 	}
-	
+	@Override
 	public String toString(){
-		return id+" "+name;
+		return String.format("%2d --> %s", id, name);
+	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if(!(obj instanceof Role)) return false;
+		Role role = (Role)obj;	
+		return this.id == role.id && this.name.equals(role.name);
+	}
+	@Override
+	public int hashCode(){
+		int result = 17;
+		result = 31 * result + id;
+		result = 31 * result + name.hashCode();
+		return result;
 	}
 }
