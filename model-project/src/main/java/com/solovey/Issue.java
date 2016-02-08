@@ -7,8 +7,8 @@ public class Issue {
 	private String name;
 	private String description;
 	private String createDate;
-	private String userAuthor;
-	private List <String> comments;
+	private User author; //many-to-one
+	private List <Comment> comments; //one-to-many
 	
 	Issue(){}
 	
