@@ -3,7 +3,7 @@
 <hibernate-mapping>
     <class name="com.solovey.Comment" table="comments">
         <id name="id" column="id" type="int">
-            <generator class="assigned"/>
+            <generator class="increment"/>
         </id>
         <property name="text" column="text" type="string"/>
         <property name="createDate" column="createdate" type="date"/>
