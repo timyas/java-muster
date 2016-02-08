@@ -3,7 +3,7 @@ public class User {
 	private int id;
 	private String login;
 	private String password;
-	private int roleId;
+	private Role role; //many-to-one
 	
 	public User(){}
 	
